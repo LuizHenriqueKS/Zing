@@ -8,10 +8,12 @@ include util/list.e
 list minhaLista = list:empty()
 list:add(minhaLista, "Primeiro item")
 list:add(minhaLista, "Segundo item")
+list:add(minhaLista, "Terceiro item")
 
 
 printf(1, "Tamanho da lista: %d\r\n", {list:size(minhaLista)})
-
+list:removeByIndex(minhaLista, 0)
+list:remove(minhaLista, "Segundo item")
 printf(1, "%s\r\n", {list:get(minhaLista, 0)})
 
 system("pause")

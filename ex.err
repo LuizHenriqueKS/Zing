@@ -1,12 +1,16 @@
-C:\Users\luiz.silva\Documents\Euphoria\Zing\util\list.e:23 in function get() 
-attempt to subscript an atom
-(reading from it) - in subscript #1 of 'list' 
+C:\Users\luiz.silva\Documents\Euphoria\Zing\util\list.e:50 in function indexOf() 
+true/false condition must be an ATOM 
     list = 1
-    index = 1
-    indexes = <no value>
-    itemSeq = <no value>
+    item = {83'S',101'e',103'g',117'u',110'n',100'd',111'o',32' ',105'i',
+116't',101'e',109'm'}
+    i = 0
 
-... called from C:\Users\luiz.silva\Documents\Euphoria\Zing\Main.ex:15 
+... called from C:\Users\luiz.silva\Documents\Euphoria\Zing\util\list.e:29 in function remove()  
+    list = 1
+    item = {83'S',101'e',103'g',117'u',110'n',100'd',111'o',32' ',105'i',
+116't',101'e',109'm'}
+
+... called from C:\Users\luiz.silva\Documents\Euphoria\Zing\Main.ex:16 
 
 
 Public & Export & Global & Local Variables
@@ -108,7 +112,7 @@ Public & Export & Global & Local Variables
  C:\Euphoria\include\std\machine.e:
     FREE_ARRAY_RID = 1
     page_size = 4096
-    oldprotptr = 9163208
+    oldprotptr = 9295976
     kernel_dll = 2002255872
     memDLL_id = 2002255872
     VirtualAlloc_rid = 23
@@ -119,7 +123,7 @@ Public & Export & Global & Local Variables
     system_info_ptr = <no value>
 
  C:\Euphoria\include\std\convert.e:
-    mem = 9163496
+    mem = 9295752
     decimal_mark = 46'.'
 
  C:\Euphoria\include\std\filesys.e:
@@ -151,14 +155,14 @@ Public & Export & Global & Local Variables
     pretty_line = <no value>
 
  C:\Euphoria\include\std\serialize.e:
-    mem0 = 9163432
-    mem1 = 9163433
-    mem2 = 9163434
-    mem3 = 9163435
-    mem4 = 9163436
-    mem5 = 9163437
-    mem6 = 9163438
-    mem7 = 9163439
+    mem0 = 9295912
+    mem1 = 9295913
+    mem2 = 9295914
+    mem3 = 9295915
+    mem4 = 9295916
+    mem5 = 9295917
+    mem6 = 9295918
+    mem7 = 9295919
 
  C:\Euphoria\include\std\text.e:
     lower_case_SET = {}
@@ -168,13 +172,13 @@ Public & Export & Global & Local Variables
     api_CharLowerBuff = 35'#'
     api_CharUpperBuff = 36'$'
     tm_size = 1024
-    temp_mem = 23428312
+    temp_mem = 24163032
 
  C:\Euphoria\include\std\io.e:
-    mem0 = 9163816
-    mem1 = 9163817
-    mem2 = 9163818
-    mem3 = 9163819
+    mem0 = 9295528
+    mem1 = 9295529
+    mem2 = 9295530
+    mem3 = 9295531
 
  C:\Euphoria\include\std\scinot.e:
     NATIVE_FORMAT = 2
@@ -243,7 +247,7 @@ Public & Export & Global & Local Variables
  C:\Euphoria\include\std\eumem.e:
     ram_space = {
                   {
-                    2,
+                    3,
                     {
                       {-2,0,0},
                       {-2,0,0},
@@ -253,20 +257,20 @@ Public & Export & Global & Local Variables
                       {
                         708329237,
                         0,
-                        {80'P',114'r',105'i',109'm',101'e',105'i',114'r',
-111'o',32' ',105'i',116't',101'e',109'm'}
+                        {83'S',101'e',103'g',117'u',110'n',100'd',111'o',
+32' ',105'i',116't',101'e',109'm'}
                       },
                       {
                         88646550,
                         1,
-                        {83'S',101'e',103'g',117'u',110'n',100'd',111'o',
-32' ',105'i',116't',101'e',109'm'}
+                        {84'T',101'e',114'r',99'c',101'e',105'i',114'r',
+111'o',32' ',105'i',116't',101'e',109'm'}
                       },
                       {-2,0,0},
                       {-2,0,0},
                       {-2,0,0},
                       {-2,0,0},
-                      {-2,0,0},
+                      {422304363,2,0},
                       {-2,0,0},
                       {-2,0,0},
                       {-2,0,0},
