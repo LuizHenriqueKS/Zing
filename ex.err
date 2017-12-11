@@ -1,10 +1,8 @@
-C:\Users\Luiz Henrique\Documents\Euphoria\Zing\util\list.e:7
-<0132>:: Syntax error - expected to see possibly 'end', not '('
-	return map(map)
-	          ^
+C:\Users\Luiz Henrique\Documents\Euphoria\Zing\util\util.e:4
+<0132>:: Syntax error - expected to see possibly ',', not a character string
+	puts(out "{")
+	           ^
 
-Warning { not_reached }:
-	<0218>:: list.e:7 - statement after return will never be executed
 
 --- Defined Words ---
 EU4
