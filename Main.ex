@@ -33,7 +33,8 @@ printf(1, "i is integer 2: %d\r\n", integer("i"))
 printf(1, "listaNum is list: %d\r\n", list(listaNum))
 printf(1, "listaNum is list: %d\r\n", list(0))
 
-list listaSimples = list:from({1,2,3,4})
+list listaSimples = list:from({1,2,4,5})
+list:insert(listaSimples, 2, 3)
 puts(1, "Lista simples: ")
 print_s(1, list:toSequence(listaSimples))
 

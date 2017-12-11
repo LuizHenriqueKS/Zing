@@ -52,6 +52,14 @@ public procedure addAll(list lis, object items)
 	end if
 end procedure
 
+-- INSERIR UM ITEM NUMA POSICAO
+public procedure insert(list list, integer index, object item)
+	for i=size(list) to index+1 by -1 do 
+		map:put(list, i, get(list, i-1))
+	end for
+	map:put(list, index, item)
+end procedure
+
 -- ADICIONA UMA SEQUENCIA A LISTA
 public procedure addSequence(list list, sequence seq)
 	for i=1 to length(seq) do

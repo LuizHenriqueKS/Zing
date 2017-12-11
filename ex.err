@@ -1,7 +1,9 @@
-C:\Users\Luiz Henrique\Documents\Euphoria\Zing\util\util.e:4
-<0132>:: Syntax error - expected to see possibly ',', not a character string
-	puts(out "{")
-	           ^
+C:\Users\Luiz Henrique\Documents\Euphoria\Zing\util\list.e:56
+<0074>:: Errors resolving the following references:
+	'int' (util\list.e:56) has not been declared.
+
+public procedure insert(list list, int index, object item)
+                                                         ^
 
 
 --- Defined Words ---
