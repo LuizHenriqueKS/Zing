@@ -4,7 +4,7 @@ global constant
 	true = 1,
 	false = 0,
 	default = 1,
-	void = {{}, {}}
+	void = {}
 
 global type isVoid(object arg)
 	return equal(arg, void)

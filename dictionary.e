@@ -10,4 +10,10 @@ public function empty()
 	return void
 end function
 
+public function add(object dict, sequence nameVar, object input)
+	if dictionary(dict) then
+		
+	end if
+end function
+
 --public function 
