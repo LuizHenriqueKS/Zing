@@ -7,7 +7,7 @@ export sequence listVar = void
 
 global type dictionary(object input)
 	--TIPO DICIONÁRIO
-	return object(input)
+	return map(input)
 end type
 
 public function empty()

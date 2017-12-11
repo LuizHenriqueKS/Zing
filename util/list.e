@@ -3,8 +3,8 @@ namespace list
 include std/map.e
 include util/constants.e
 
-public type list(map map)
-	return 1
+public type list(object value)
+	return map(value)
 end type
 
 --INICIA UMA LISTA VAZIA

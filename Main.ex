@@ -25,4 +25,11 @@ list:remove(listaNum, 2)
 
 printf(1, "%d!=%d\r\n", {list:get(listaNum, 0),list:get(listaNum, 1)})
 
+object i = 10
+printf(1, "i is integer: %d\r\n", integer(i))
+printf(1, "i is integer 2: %d\r\n", integer("i"))
+
+printf(1, "listaNum is list: %d\r\n", list(listaNum))
+printf(1, "listaNum is list: %d\r\n", list(0))
+
 system("pause")
