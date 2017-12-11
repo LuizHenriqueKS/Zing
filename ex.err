@@ -1,9 +1,9 @@
-C:\Users\André Luiz\Documents\GitHub\Zing\dictionary.e:26
+C:\Users\Luiz Henrique\Documents\Euphoria\Zing\util\list.e:56
 <0074>:: Errors resolving the following references:
-	'listVar' (dictionary.e:26) has not been declared.
+	'int' (util\list.e:56) has not been declared.
 
-		if (find(nameKey, listVar) > 0) then
-		                         ^
+public procedure insert(list list, int index, object item)
+                                                         ^
 
 
 --- Defined Words ---
@@ -13,8 +13,8 @@ EU4_1_0
 WINDOWS
 WIN32
 CONSOLE
-X86
-BITS32
+X86_64
+BITS64
 LONG32
 EUI
 -------------------
