@@ -1,30 +1,26 @@
 namespace list
 
-public type list(sequence values)
-	return length(values)=2
+include std/map.e
+
+public type list(map map)
+	return 1
 end type
 
 --INICIA UMA LISTA VAZIA
 public function empty()
-	list result = {0,0}
+	list result = map:new()
 	return result
 end function
 
 -- ADICIONA UM ITEM NA LISTA
 public procedure add(list list, object item)
-	sequence newItem = {item, 0}
-	if isEmpty(list) then
-		list[1] = {newItem}
-		list[2] = newItem
-	else 
-		list[1] = append(list[1], newItem)
-		list[2][size(list)-1][2] = newItem
-	end if
+	integer index = size(list)
+	map:put(list, index, item)
 end procedure
 
 -- RETORNA UM ITEM DA LISTA
 public function get(list list, integer index)
-	return list[1][index+1][1]
+	return map:get(list, index)
 end function
 
 -- REMOVE UM ITEM DA LISTA
@@ -59,10 +55,7 @@ end function
 
 -- RETORNA O TAMANHO ATUAL DA LISTA
 public function size(list list)
-	if list[1]=0 then
-		return 0
-	end if
-	return length(list[1])
+	return map:size(list)
 end function
 
 -- RETORNA TRUE SE A LISTA ESTÁ VAZIA
