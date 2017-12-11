@@ -16,4 +16,13 @@ list:removeByIndex(minhaLista, 0)
 list:remove(minhaLista, "Segundo item")
 printf(1, "%s\r\n", {list:get(minhaLista, 0)})
 
+list listaNum = list:empty()
+list:add(listaNum, 1)
+list:add(listaNum, 2)
+list:add(listaNum, 3)
+
+list:remove(listaNum, 2)
+
+printf(1, "%d!=%d\r\n", {list:get(listaNum, 0),list:get(listaNum, 1)})
+
 system("pause")
