@@ -1,0 +1,16 @@
+C:\Users\luiz.silva\Documents\Euphoria\Zing\util\list.e:27 in function get() 
+attempt to subscript an atom
+(reading from it) - in subscript #1 
+    list = {0,0}
+    index = 1
+
+... called from C:\Users\luiz.silva\Documents\Euphoria\Zing\Main.ex:12 
+
+
+Public & Export & Global & Local Variables
+
+ C:\Users\luiz.silva\Documents\Euphoria\Zing\Main.ex:
+    minhaLista = {0,0}
+    result (from inlined routine 'empty' at 0) = <no value>
+
+
