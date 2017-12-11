@@ -22,6 +22,7 @@ list:add(listaNum, 2)
 list:add(listaNum, 3)
 
 list:remove(listaNum, 2)
+list:lastIndexOf(listaNum, 1)
 
 printf(1, "%d!=%d\r\n", {list:get(listaNum, 0),list:get(listaNum, 1)})
 

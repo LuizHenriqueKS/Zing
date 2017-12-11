@@ -58,6 +58,11 @@ end function
 -- OBTEM O ÚLTIMO ÍNDICE DO ITEM DENTRO DA LISTA
 -- RETORNA -1 SE NÃO ENCONTROU O ITEM NA LISTA
 public function lastIndexOf(list list, object item)
+	for i = size(list)-1 to 0 by -1 do
+		if calc_hash(get(list,i), MAX_INTEGER) = calc_hash(item, MAX_INTEGER) then
+			return i
+		end if
+	end for
 	return -1
 end function
 
