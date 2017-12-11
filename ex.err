@@ -1,7 +1,9 @@
-C:\Users\luiz.silva\Documents\Euphoria\Zing\Main.ex:26
-<0127>:: Punctuation missing in between number and 'g'
-printf(1, "%d!=%d", {list.get(listaNum, 0),list.get(listaNum, 1)})
-                          ^
+C:\Users\André Luiz\Documents\GitHub\Zing\dictionary.e:26
+<0074>:: Errors resolving the following references:
+	'listVar' (dictionary.e:26) has not been declared.
+
+		if (find(nameKey, listVar) > 0) then
+		                         ^
 
 
 --- Defined Words ---
