@@ -1,9 +1,9 @@
-C:\Users\Luiz Henrique\Documents\Euphoria\Zing\util\list.e:56
+C:\Users\André Luiz\Documents\GitHub\Zing\teste.ex:11
 <0074>:: Errors resolving the following references:
-	'int' (util\list.e:56) has not been declared.
+	'any_key' (teste.ex:11) has not been declared.
 
-public procedure insert(list list, int index, object item)
-                                                         ^
+any_key()
+       ^
 
 
 --- Defined Words ---
@@ -13,8 +13,8 @@ EU4_1_0
 WINDOWS
 WIN32
 CONSOLE
-X86_64
-BITS64
+X86
+BITS32
 LONG32
 EUI
 -------------------

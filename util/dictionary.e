@@ -1,5 +1,13 @@
 --Author	: André Luiz
 --Version	: 1.0.0.4
+---MÉTODOS E FUNÇÕES:
+--empty()		--FUNCTION
+--put()			-- PROCEDURE
+--get()			--FUNCTION
+--existKey()	--FUNCTION
+--remove()		-- PROCEDURE
+--count()		--FUNCTION
+--listKeys()	--FUNCTION
 namespace dictionary
 include std/map.e
 include util/list.e
