@@ -1,9 +1,7 @@
-C:\Users\luiz.silva\Documents\Euphoria\Zing\util\list.e:82
-<0074>:: Errors resolving the following references:
-	'set' (util\list.e:82) was not declared in 'C:/Euphoria/include/std/map.e'.
-
-		map:set(list, index, item)
-		      ^
+C:\Users\luiz.silva\Documents\Euphoria\Zing\script\engine.e:8
+<0132>:: Syntax error - expected to see possibly 'end', not ':'
+	engine result = dictionary:empty()
+	                          ^
 
 
 --- Defined Words ---
