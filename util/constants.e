@@ -4,7 +4,8 @@ global constant
 	true = 1,
 	false = 0,
 	default = 1,
-	void = {},
+	void = {"class: Void"},
+	null = {"class: Null"},
 	MAX_INTEGER = 1073741823
 
 global type isVoid(object arg)
