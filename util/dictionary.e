@@ -1,4 +1,5 @@
 --Author	: André Luiz
+--Revision  : Luiz Henrique Kafer Silva
 --Version	: 1.0.0.4
 ---MÉTODOS E FUNÇÕES:
 --empty()		--FUNCTION
