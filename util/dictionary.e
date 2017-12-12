@@ -1,5 +1,5 @@
 --Author	: André Luiz
---Version	: 1.0.0.6
+--Version	: 1.0.0.7
 
 -----FUNÇÕES:
 --empty()			INSTANCIA;
@@ -8,7 +8,8 @@
 --containsKey()		VERIFICA SE TEM A CHAVE;
 --indexOf()			PEGA O ÍNDICE DA CHAVE DO DICIONÁRIO;
 --size()			PEGA A QUANTIDADE DE DE CHAVES REGISTRADAS;
---keys()			RETORNA EM {} TODAS AS CHAVES;
+--keys()			RETORNA EM {ARRAY} TODAS AS CHAVES;
+--values()			RETORNA EM {ARRAY} TODOS OS VALORES DA CHAVE;
 
 -----PROCEDIMENTOS:
 --put()				ADICONA UMA CHAVE NO DICIONÁRIO;
@@ -126,6 +127,9 @@ public function keys(dictionary dict, integer sorted_result = 0)
 end function
 
 --RETORNA OS VALORES DAS CHAVES
+--SINTAXE DO PARÂNEMTRO KEY:
+---dictionary:values([DICIONÁRIO])
+---dictionary:values([DICIONÁRIO], {"chave1", "chave2"})
 public function values(dictionary dict, object key = 0)
 	return map:values(dict, key)
 end function
