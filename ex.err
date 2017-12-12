@@ -1,9 +1,9 @@
-C:\Users\André Luiz\Documents\GitHub\Zing\teste.ex:11
+C:\Users\luiz.silva\Documents\Euphoria\Zing\Main.ex:6
 <0074>:: Errors resolving the following references:
-	'any_key' (teste.ex:11) has not been declared.
+	'constants' (Main.ex:6) has not been declared.
 
-any_key()
-       ^
+constants SCRIPT_PATH = "resource/Script0001.zing"
+          ^
 
 
 --- Defined Words ---
