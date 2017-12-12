@@ -76,7 +76,11 @@ end procedure
 
 -- RETORNA UM ITEM DA LISTA
 public function get(list list, integer index)
-	return map:get(list, index)
+	if map:has(list, index) then
+		return map:get(list, index)
+	else 
+		return null
+	end  if
 end function
 
 -- REMOVE UM ITEM DA LISTA
