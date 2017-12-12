@@ -2,15 +2,14 @@
 --Version	: 1.0.0.4
 ---MÉTODOS E FUNÇÕES:
 --empty()		--FUNCTION
---put()			-- PROCEDURE
+--put()			--PROCEDURE
 --get()			--FUNCTION
 --containsKey()	--FUNCTION
---remove()		-- PROCEDURE
+--remove()		--PROCEDURE
 --size()		--FUNCTION
 --listKeys()	--FUNCTION
 namespace dictionary
 include std/map.e
-include util/list.e
 
 --TIPO DICIONÁRIO
 global type dictionary(object input)
@@ -20,13 +19,12 @@ end type
 
 --INSTANCIA UM DICIONÁRIO VÁZIO.
 public function empty()
-	return new()
+	return map:new()
 end function
 
 
 --ADICONA UMA CHAVE E ATRIBUI DADOS A ELA.
 public procedure put(dictionary dict, object key, object value)
-	--ADICIONA UMA CHAVE AO DICIONÁRIO.
 	if dictionary(dict) then
 		map:put(dict, key, value)
 	else
@@ -41,12 +39,22 @@ public function get(dictionary dict, object key)
 	if dictionary(dict) and containsKey(dict, key) then
 		return map:get(dict, key)
 	else
-		--CASO NÃO SEJA UM DICIONÁRIO.
-		--OU A CHAVE NÃO EXISTE.
 		return void
 	end if
 end function
 
+
+--PEGA O NOME DA CHAVE ATRAVEZ DO ÍNDICE.
+--CASO NÃO EXISTA A CHAVE É RETORNADO UM VOID.
+public function getKeyByIndex(dictionary dict, integer index)
+	object item = map:keys(dict, 1)
+	for i=0 to map:size(dict) do
+		if (i = index) then
+			return item[i]
+		end if
+	end for
+	return void
+end function
 
 --VERIFICA SE EXISTE A CHAVE.
 --RETORNA TRUE/FALSE.
@@ -56,15 +64,40 @@ end function
 
 
 --REMOVE UMA CHAVE.
---CASO NÃO TENHA RETORNA UM PUTS(ERROR).
+--CASO NÃO TENHA RETORNA DEBUGANDO.
 public procedure remove(dictionary dict, object key)
 	if dictionary(dict) and containsKey(dict, key) then
 		map:remove(dict, key)
 	else
-		puts(1, "error:\n")
+		trace(1)
+		--Não existe ess chave
 	end if
 end procedure
 
+
+--REMOVE UMA CHAVE ATRAVEZ DO ÍNDICE.
+public procedure removeByIndex(dictionary dict, integer index)
+	if (index <= map:size(dict)) and (index >= 1) then
+		map:remove(dict, getKeyByIndex(dict, index))
+	else
+		trace(1)
+		--O índice talvez tenha ou ultrapassou ou
+		--é menor que a quantidade de chaves do dicionário.
+	end if
+end procedure
+
+
+--RETORNA O ÍNDICE DO DICIONÁRIO ATRAVEZ DO NOME DA CHAVE.
+--CASO NÃO EXISTA O ÍNDICE RETORNA -1.
+public function indexOf(dictionary dict, object key)
+	object item = map:keys(dict, 1)
+	for i=1 to map:size(dict) do
+		if calc_hash(item[i], MAX_INTEGER) = calc_hash(key, MAX_INTEGER) then
+			return i
+		end if
+	end for
+	return -1
+end function
 
 --RETORNA O QUANTAS CHAVES TEM.
 --CASO NÃO TENHA NENHUMA RETORNA -1.
@@ -81,14 +114,3 @@ end function
 public function keys(dictionary dict, integer sorted_result = 0)
 	return map:keys(dict, sorted_result)
 end function
-
---LISTA TODAS AS CHAVES JÁ CRIADAS.
---CASO NÃO TENHA RETORNA UM VOID.
-public function listKeys(dictionary dict, integer sorted_result = 0)
-	if dictionary(dict) then
-		return list:from(map:keys(dict, sorted_result))
-	else
-		return void
-	end if
-end function
-

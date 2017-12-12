@@ -1,7 +1,18 @@
-C:\Users\luiz.silva\Documents\Euphoria\Zing\test_type.ex:3
-true/false condition must be an ATOM 
+C:\Users\André Luiz\Documents\GitHub\Zing\teste.ex:28
+<0056>:: character constant is missing a closing '
+? dictionary:containsKey(var, 'k_1')
+                                ^
 
 
-Public & Export & Global & Local Variables
-
-
+--- Defined Words ---
+EU4
+EU4_1
+EU4_1_0
+WINDOWS
+WIN32
+CONSOLE
+X86
+BITS32
+LONG32
+EUI
+-------------------
