@@ -1,7 +1,7 @@
-C:\Users\André Luiz\Documents\GitHub\Zing\teste.ex:28
-<0056>:: character constant is missing a closing '
-? dictionary:containsKey(var, 'k_1')
-                                ^
+C:\Users\André Luiz\Documents\GitHub\Zing\test_dictionary.ex:34
+<0236>:: 'values' needs 2 arguments
+? dictionary:values(var)
+                       ^
 
 
 --- Defined Words ---

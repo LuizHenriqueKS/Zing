@@ -1,4 +1,4 @@
--Author	: André Luiz
+--Author	: André Luiz
 --Version	: 1.0.0.6
 
 -----FUNÇÕES:
@@ -123,4 +123,9 @@ end function
 --RETORNA UMA SEQUENCIA COM AS CHAVES
 public function keys(dictionary dict, integer sorted_result = 0)
 	return map:keys(dict, sorted_result)
+end function
+
+--RETORNA OS VALORES DAS CHAVES
+public function values(dictionary dict, object key = 0)
+	return map:values(dict, key)
 end function
