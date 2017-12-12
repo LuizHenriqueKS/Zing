@@ -74,6 +74,15 @@ public procedure addList(list lis, list items)
 	end for
 end procedure
 
+-- ALTERA O VALOR DE UM DETERMINADO ÍNDICE
+public procedure set(list list, integer index, object item)
+	if index<0 or index>=size(list) then
+		trace("index invalid: " & index)
+	else 
+		map:put(list, index, item)
+	end if
+end procedure
+
 -- RETORNA UM ITEM DA LISTA
 public function get(list list, integer index)
 	if map:has(list, index) then

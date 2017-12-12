@@ -67,6 +67,20 @@ public function insert(set set, integer index, object item)
 	end if
 end function
 
+-- ALTERA UM VALOR EM UM DETERMINADO ÍNDICE
+public function set(set set, integer index, object item)
+	if contains(set, item) then
+		if equal(get(set, index), item) then
+			return true
+		else 
+			return false
+		end if
+	else 
+		list:set(set, index, item)
+		return true
+	end if
+end function
+
 -- ADICIONA UMA SEQUENCIA AO SET
 public procedure addSequence(set set, sequence seq)
 	for i=1 to length(seq) do
