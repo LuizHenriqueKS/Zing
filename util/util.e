@@ -3,22 +3,21 @@ namespace util
 include util/list.e
 
 public procedure print_s(atom out, sequence seq)
-	puts(out, "{")
-	atom first = 1
-	for i=1 to length(seq) do
-		if not first then
-			puts(out, ",")
-		end if
-		first = 0
-		if integer(seq[1]) then
-			printf(out, "%d", {seq[i]})
-		else 
-			printf(out, "%s", {seq[i]})
-		end if
-	end for
-	puts(out, "}\r\n")
+	print_l(1, list:from(seq))
 end procedure
 
 public procedure print_l(atom out, list input)
-	print_s(out, list:toSequence(input))
+	puts(out, "{")
+	for i=0 to list:size(input)-1 do
+		if i>0 then
+			puts(out, ",")
+		end if
+		object item = list:get(input, i)
+		if integer(item) then
+			printf(out, "%d", {item})
+		else 
+			printf(out, "%s", {item})
+		end if
+	end for
+	puts(out, "}\r\n")
 end procedure

@@ -12,18 +12,17 @@ include zing/engine/zing.e
 sequence source = "var numero = 10f+1f;\r\n"
 list expectedResult = list:from({"var"," ", "numero", " ", "=", "10f", "+", "1f", ";" , "\r\n"})
 
-abort(0)
-
 zing e = zing:new()
 list result = engine:parseBlockList(e, source)
 
-if list:size(source)!=list:size(expectedResult) then
+if list:size(result)!=list:size(expectedResult) then
 	printf(1, "Tamanhos diferentes: %d(esperado) != %d(obtido)\r\n", {list:size(expectedResult),list:size(result)})
 	puts(1, "Esperado: ")
 	print_l(1, expectedResult)
 	puts(1, "Obtido: ")
 	print_l(1, block:listTexts(result))
-	
+	any_key()
+	abort(0)
 end if
 
 integer diff = 0

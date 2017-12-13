@@ -29,16 +29,14 @@ public function eval(engine eng, sequence source)
 end function
 
 public function parseBlockList(engine eng, sequence source)
-	sequence funcName = getBlockListParser(eng)
-	integer funcId = routine_id(funcName)
-	list result = call_func(funcId, {eng, source})
+	integer routineId = getBlockListParser(eng) 
+	list result = call_func(routineId, {eng, source})
 	return result
 end function
 
 public function parseCommandList(engine eng, list blockList)
-	sequence funcName = getCommandListParser(eng)
-	integer funcId = routine_id(funcName)
-	list result = call_func(funcId, {eng, blockList})
+	integer routineId = getCommandListParser(eng) 
+	list result = call_func(routineId, {eng, blockList})
 	return result
 end function
 
@@ -46,13 +44,13 @@ end function
 public function getBlockListParser(engine eng)
 	return dictionary:get(eng, "blockListParser")
 end function
-public procedure setBlockListParser(engine eng, sequence funcName)
-	dictionary:put(eng, "blockListParser", funcName)
+public procedure setBlockListParser(engine eng, integer routineId)
+	dictionary:put(eng, "blockListParser", routineId)
 end procedure
 
 public function getCommandListParser(engine eng)
 	return dictionary:get(eng, "commandListParser")
 end function
-public procedure setCommandListParser(engine eng, sequence funcName)
-	dictionary:put(eng, "commandListParser", funcName)
+public procedure setCommandListParser(engine eng, integer routineId)
+	dictionary:put(eng, "commandListParser", routineId)
 end procedure
