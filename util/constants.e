@@ -4,10 +4,9 @@ global constant
 	true = 1,
 	false = 0,
 	default = 1,
-	void = {"class: Void"},
 	null = {"class: Null"},
 	MAX_INTEGER = 1073741823
 
-global type isVoid(object arg)
-	return equal(arg, void)
+type boolean(atom input)
+	return input=0 or input=1
 end type

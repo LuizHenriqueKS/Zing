@@ -1,5 +1,7 @@
 namespace util
 
+include util/list.e
+
 public procedure print_s(atom out, sequence seq)
 	puts(out, "{")
 	atom first = 1
@@ -15,4 +17,8 @@ public procedure print_s(atom out, sequence seq)
 		end if
 	end for
 	puts(out, "}\r\n")
+end procedure
+
+public procedure print_l(atom out, list input)
+	print_s(out, list:toSequence(input))
 end procedure

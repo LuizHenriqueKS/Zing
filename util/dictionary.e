@@ -43,18 +43,18 @@ end procedure
 
 
 --PEGA OS DADOS DE UMA CHAVE.
---CASO NÃO TENHA NADA RETORNA UM VOID.
+--CASO NÃO TENHA NADA RETORNA UM NULL.
 public function get(dictionary dict, object key)
 	if dictionary(dict) and containsKey(dict, key) then
 		return map:get(dict, key)
 	else
-		return void
+		return null
 	end if
 end function
 
 
 --PEGA O NOME DA CHAVE ATRAVÉZ DO ÍNDICE.
---CASO NÃO EXISTA A CHAVE É RETORNADO UM VOID.
+--CASO NÃO EXISTA A CHAVE É RETORNADO UM NULL.
 public function getKeyByIndex(dictionary dict, integer index)
 	object item = map:keys(dict, 1)
 	for i=0 to map:size(dict) do
@@ -62,7 +62,7 @@ public function getKeyByIndex(dictionary dict, integer index)
 			return item[i]
 		end if
 	end for
-	return void
+	return null
 end function
 
 

@@ -1,18 +1,2 @@
-C:\Users\luiz.silva\Documents\Euphoria\Zing\script\engine.e:8
-<0132>:: Syntax error - expected to see possibly 'end', not ':'
-	engine result = dictionary:empty()
-	                          ^
-
-
---- Defined Words ---
-EU4
-EU4_1
-EU4_1_0
-WINDOWS
-WIN32
-CONSOLE
-X86
-BITS32
-LONG32
-EUI
--------------------
+Fatal run-time error:
+sequence found inside character string

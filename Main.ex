@@ -23,8 +23,19 @@ object scriptFile = open(SCRIPT_PATH, "r")
 sequence scriptSource = read_file(scriptFile)
 close(scriptFile)
 
+--EXIBE O SCRIPT QUE VAI SER EXECUTADO
+puts(1, "Previsualização do script: \r\n")
+puts(1, "=====================================\r\n")
+printf(1, "%s\r\n", {scriptSource})
+puts(1, "=====================================\r\n")
+puts(1, "\r\n")
+
 --EXECUTA O SCRIPT
+puts(1, "Executando script: \r\n")
+puts(1, "=====================================\r\n")
 zing eng = zing:new()
-engine:eval(eng, scriptFile)
+object result = engine:eval(eng, scriptSource)
+display(result)
+puts(1, "=====================================\r\n")
 
 any_key()
