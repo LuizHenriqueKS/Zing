@@ -12,6 +12,8 @@ include zing/engine/zing.e
 sequence source = "var numero = 10f+1f;\r\n"
 list expectedResult = list:from({"var"," ", "numero", " ", "=", "10f", "+", "1f", ";" , "\r\n"})
 
+abort(0)
+
 zing e = zing:new()
 list result = engine:parseBlockList(e, source)
 
