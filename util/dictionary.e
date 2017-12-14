@@ -29,18 +29,30 @@ public function empty()
 	return map:new()
 end function
 
---CLONA UM DICIONÁRIO -- VERIFICAR SE Ñ TEM UMA MANEIRA NATIVA
+
+--CLONA UM DICIONÁRIO PARA OUTRO;
+--INCLUI CHAVES E VALORES.
 public function clone(dictionary dict)
 	dictionary result = dictionary:empty()
-	sequence keys = dictionary:keys(dict)
-	for i=0 to length(keys) do
-		object key = keys[i]
-		object value = dictionary:get(dict, key)
-		dictionary:put(result, key, value)
-	end for
+	if dictionary(dict)then
+		map:copy(dict, result)
+	else
+		trace(1)
+		--O DICIONÁRIO "DICT" PODE NÃO SER
+		--DE FATO UM DICIONÁRIO.
+	end if
 	return result
 end function
 
+--RESETA UM DICIONÁRIO POR COMPLETO.
+public procedure clear(dictionary dict)
+	if dictionary(dict) then
+		map:clear(dict)
+	else
+		trace(1)
+		--Não existe essa chave ou o dicionário
+	end if
+end procedure
 
 --ADICONA UMA CHAVE E ATRIBUI DADOS A ELA.
 public procedure put(dictionary dict, object key, object value)

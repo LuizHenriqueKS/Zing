@@ -1,9 +1,9 @@
-C:\Users\luiz.silva\Documents\Euphoria\Zing\zing\engine\blockListParser.e:35
+C:\Users\Luiz Henrique\Documents\Euphoria\Zing\util\dictionary.e:38
 <0074>:: Errors resolving the following references:
-	'getLetterInfo' (zing\engine\blockListParser.e:35) has not been declared.
+	'dict1' (util\dictionary.e:38) has not been declared.
 
-		sequence letterInfo = getLetterInfo(source, a, len)
-		                                   ^
+		map:copy(dict1, result)
+		              ^
 
 
 --- Defined Words ---
@@ -13,8 +13,8 @@ EU4_1_0
 WINDOWS
 WIN32
 CONSOLE
-X86
-BITS32
+X86_64
+BITS64
 LONG32
 EUI
 -------------------
