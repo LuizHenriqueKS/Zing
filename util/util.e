@@ -88,3 +88,7 @@ public function replace( sequence target, sequence old, sequence new )
   return target
 
 end function
+
+public function isEmpty(sequence str)
+	return equal(str, null) or equal(str, "")
+end function

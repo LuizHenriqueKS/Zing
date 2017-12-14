@@ -9,8 +9,8 @@ include script/engine.e
 
 include zing/engine/zing.e
 
-sequence source = "var numero = 10f+1f;\r\n"
-list expectedResult = list:from({"var"," ", "numero", " ", "=", "10f", "+", "1f", ";" , "\r\n"})
+sequence source = "var número = 10F+1f;\r\n"
+list expectedResult = list:from({"var"," ", "número", " ", "=", "10F", "+", "1f", ";" , "\r\n"})
 
 zing e = zing:new()
 list result = engine:parseBlockList(e, source)
