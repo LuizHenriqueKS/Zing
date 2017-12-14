@@ -1,12 +1,9 @@
-C:\Users\Luiz Henrique\Documents\Euphoria\Zing\test_parse_block_list.ex:3
-<0052>:: can't find 'util\list.e' in any of ...
-	C:\Users\Luiz Henrique\Documents\Euphoria\Zing
-	C:\Users\Luiz Henrique\Documents\Euphoria\Zing\test_parse_block_list.ex
-	C:\Euphoria\include
-	C:\Euphoria
+C:\Users\luiz.silva\Documents\Euphoria\Zing\zing\engine\blockListParser.e:35
+<0074>:: Errors resolving the following references:
+	'getLetterInfo' (zing\engine\blockListParser.e:35) has not been declared.
 
-include util/list.e
-                   ^
+		sequence letterInfo = getLetterInfo(source, a, len)
+		                                   ^
 
 
 --- Defined Words ---
@@ -16,8 +13,8 @@ EU4_1_0
 WINDOWS
 WIN32
 CONSOLE
-X86_64
-BITS64
+X86
+BITS32
 LONG32
 EUI
 -------------------
