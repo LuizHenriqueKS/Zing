@@ -7,6 +7,6 @@ global constant
 	null = {"class: Null"},
 	MAX_INTEGER = 1073741823
 
-type boolean(atom input)
+public type boolean(atom input)
 	return input=0 or input=1
 end type

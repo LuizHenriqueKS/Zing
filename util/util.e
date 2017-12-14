@@ -1,5 +1,6 @@
 namespace util
 
+include std/map.e
 include util/list.e
 
 public procedure print_s(atom out, sequence seq)
@@ -7,19 +8,58 @@ public procedure print_s(atom out, sequence seq)
 end procedure
 
 public procedure print_l(atom out, list input)
-	puts(out, "{")
-	for i=0 to list:size(input)-1 do
-		if i>0 then
-			puts(out, ",")
-		end if
-		object item = list:get(input, i)
-		if integer(item) then
-			printf(out, "%d", {item})
-		else 
-			printf(out, "%s", {item})
-		end if
-	end for
-	puts(out, "}\r\n")
+	if list:size(input)=0 then
+		puts(out, "{}")
+	else 
+		puts(out, "{")
+		for i=0 to list:size(input)-1 do
+			if i>0 then
+				puts(out, ",")
+			end if
+			object item = list:get(input, i)
+			puts(out, "\r\n\t")
+			print_o(out, item)
+		end for
+		puts(out, "\r\n}")
+	end if
+end procedure
+
+public function print_o(atom out, object obj)
+	if integer(obj) then
+		printf(out, "%d", {obj})
+		return null
+	end if 
+	if list(obj) then
+		print_l(out, obj)
+		return null
+	end if
+	if map(obj) then
+		print_m(out, obj)
+		return null
+	end if
+	printf(out, "%s", {obj})	
+	return null
+end function
+
+public procedure print_m(atom out, map input)
+	if map:size(input)=0 then
+		puts(1, "{}")
+	else 
+		puts(out, "{")
+		sequence keys = map:keys(input)
+		for i=1 to length(keys) do
+			if i>1 then
+				puts(out, ",")
+			end if
+			object key = keys[i]
+			object value = map:get(input, key)
+			puts(out, "\r\n\t")
+			print_o(out, key)
+			puts(out, ": ")
+			print_o(out, value)
+		end for
+		puts(out, "\r\n}")
+	end if
 end procedure
 
 public function removeAccents(sequence str)

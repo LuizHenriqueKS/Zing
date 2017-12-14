@@ -1,144 +1,65 @@
-C:\Users\luiz.silva\Documents\Euphoria\Zing\util\util.e:30 in function removeAccents() 
-Third argument to replace() must be an atom 
-    str = {77'M',65'A',195,135,195,131,32' ',195,137,32' ',66'B',79'O',77'M'}
-    accents = {
-                {195,128},
-                {195,129},
-                {195,130},
-                {195,131},
-                {195,132},
-                {195,133},
-                {195,160},
-                {195,161},
-                {195,162},
-                {195,163},
-                {195,164},
-                {195,165},
-                {195,159},
-                {195,146},
-                {195,147},
-                {195,148},
-                {195,149},
-                {195,149},
-                {195,150},
-                {195,152},
-                {195,178},
-                {195,179},
-                {195,180},
-                {195,181},
-                {195,182},
-                {195,184},
-                {195,136},
-                {195,137},
-                {195,138},
-                {195,139},
-                {195,168},
-                {195,169},
-                {195,170},
-                {195,171},
-                {195,176},
-                {195,135},
-                {195,167},
-                {195,144},
-                {195,140},
-                {195,141},
-                {195,142},
-                {195,143},
-                {195,172},
-                {195,173},
-                {195,174},
-                {195,175},
-                {195,153},
-                {195,154},
-                {195,155},
-                {195,156},
-                {195,185},
-                {195,186},
-                {195,187},
-                {195,188},
-                {195,145},
-                {195,177},
-                {197,160},
-                {197,161},
-                {197,184},
-                {195,191},
-                {195,189},
-                {197,189},
-                {197,190}
-              }
-    accentsOut = {
-                   {65'A'},
-                   {65'A'},
-                   {65'A'},
-                   {65'A'},
-                   {65'A'},
-                   {65'A'},
-                   {97'a'},
-                   {97'a'},
-                   {97'a'},
-                   {97'a'},
-                   {97'a'},
-                   {97'a'},
-                   {66'B'},
-                   {79'O'},
-                   {79'O'},
-                   {79'O'},
-                   {79'O'},
-                   {79'O'},
-                   {79'O'},
-                   {79'O'},
-                   {111'o'},
-                   {111'o'},
-                   {111'o'},
-                   {111'o'},
-                   {111'o'},
-                   {111'o'},
-                   {69'E'},
-                   {69'E'},
-                   {69'E'},
-                   {69'E'},
-                   {101'e'},
-                   {101'e'},
-                   {101'e'},
-                   {101'e'},
-                   {101'e'},
-                   {67'C'},
-                   {99'c'},
-                   {68'D'},
-                   {73'I'},
-                   {73'I'},
-                   {73'I'},
-                   {73'I'},
-                   {105'i'},
-                   {105'i'},
-                   {105'i'},
-                   {105'i'},
-                   {85'U'},
-                   {85'U'},
-                   {85'U'},
-                   {85'U'},
-                   {117'u'},
-                   {117'u'},
-                   {117'u'},
-                   {117'u'},
-                   {78'N'},
-                   {110'n'},
-                   {83'S'},
-                   {115's'},
-                   {89'Y'},
-                   {121'y'},
-                   {121'y'},
-                   {90'Z'},
-                   {122'z'}
-                 }
-    result = {77'M',65'A',195,135,195,131,32' ',195,137,32' ',66'B',79'O',
-77'M'}
-    i = 1
+C:\Users\luiz.silva\Documents\Euphoria\Zing\zing\engine\blockListParser.e:41 in function getCommandNameDictionary() 
+type_check failure, cb is {{99'c',108'l',97'a',115's',115's',58':',32' ',... 
+    eng = 2
+    result = 3
+    commandBuilderList = 4
+    i = 0
+    cb = {
+           {99'c',108'l',97'a',115's',115's',58':',32' ',78'N',117'u',108'l',
+108'l'}
+         }
+    names = <no value>
+    j = <no value>
+    name = <no value>
+    part = <no value>
+    l = <no value>
+    letter = <no value>
+    value = <no value>
+    value (from inlined routine 'put' at 217) = <no value>
 
-... called from C:\Users\luiz.silva\Documents\Euphoria\Zing\test_text.ex:11 
+... called from C:\Users\luiz.silva\Documents\Euphoria\Zing\zing\engine\blockListParser.e:16 in function parseBlockList()  
+    eng = 2
+    source = {118'v',97'a',114'r',32' ',110'n',117'u',109'm',101'e',114'r',
+111'o',32' ',61'=',32' ',49'1',48'0',102'f',43'+',49'1',102'f',59';',13,
+10}
+    alphabet = {97'a',98'b',99'c',100'd',101'e',102'f',103'g',104'h',105'i',
+106'j',107'k',108'l',109'm',110'n',111'o',112'p',113'q',114'r',115's',116't',
+117'u',118'v',120'x',119'w',121'y',122'z',48'0',49'1',50'2',51'3',52'4',
+53'5',54'6',55'7',56'8',57'9'}
+    commandNameDict = <no value>
+    result = <no value>
+    a = <no value>
+
+... called from C:\Users\luiz.silva\Documents\Euphoria\Zing\script\engine.e:35 in function parseBlockList()  
+    eng = 2
+    source = {118'v',97'a',114'r',32' ',110'n',117'u',109'm',101'e',114'r',
+111'o',32' ',61'=',32' ',49'1',48'0',102'f',43'+',49'1',102'f',59';',13,
+10}
+    routineId = 7
+    result = <no value>
+
+... called from C:\Users\luiz.silva\Documents\Euphoria\Zing\test_parse_block_list.ex:16 
 
 
 Public & Export & Global & Local Variables
+
+ C:\Euphoria\include\std\memconst.e:
+    DEP_really_works = 1
+    use_DEP = 1
+    FREE_RID = 2
+    kernel_dll = <no value>
+    memDLL_id = <no value>
+    VirtualAlloc_rid = <no value>
+    VirtualLock_rid = <no value>
+    VirtualUnlock_rid = <no value>
+    VirtualProtect_rid = <no value>
+    GetLastError_rid = <no value>
+    GetSystemInfo_rid = <no value>
+
+ C:\Euphoria\include\std\memory.e:
+    edges_only = <no value>
+    check_calls = 1
+    VirtualFree_rid = 25
 
  C:\Euphoria\include\std\types.e:
     Defined_Sets = {
@@ -213,28 +134,10 @@ Public & Export & Global & Local Variables
                      {1,0}
                    }
 
- C:\Euphoria\include\std\memconst.e:
-    DEP_really_works = 1
-    use_DEP = 1
-    FREE_RID = 2
-    kernel_dll = <no value>
-    memDLL_id = <no value>
-    VirtualAlloc_rid = <no value>
-    VirtualLock_rid = <no value>
-    VirtualUnlock_rid = <no value>
-    VirtualProtect_rid = <no value>
-    GetLastError_rid = <no value>
-    GetSystemInfo_rid = <no value>
-
- C:\Euphoria\include\std\memory.e:
-    edges_only = <no value>
-    check_calls = 1
-    VirtualFree_rid = 25
-
  C:\Euphoria\include\std\machine.e:
     FREE_ARRAY_RID = 1
     page_size = 4096
-    oldprotptr = 2950840
+    oldprotptr = 7539928
     kernel_dll = 2002255872
     memDLL_id = 2002255872
     VirtualAlloc_rid = 23
@@ -245,29 +148,11 @@ Public & Export & Global & Local Variables
     system_info_ptr = <no value>
 
  C:\Euphoria\include\std\convert.e:
-    mem = 2950872
+    mem = 7540120
     decimal_mark = 46'.'
 
  C:\Euphoria\include\std\datetime.e:
     yydiff = 80'P'
-
- C:\Euphoria\include\std\io.e:
-    mem0 = 2951480
-    mem1 = 2951481
-    mem2 = 2951482
-    mem3 = 2951483
-
- C:\Euphoria\include\std\scinot.e:
-    NATIVE_FORMAT = 2
-
- C:\Euphoria\include\std\get.e:
-    input_file = <no value>
-    input_string = <no value>
-    string_next = <no value>
-    ch = <no value>
-    leading_whitespace = <no value>
-
- C:\Euphoria\include\std\datetime.e:
     month_names = {
                     {74'J',97'a',110'n',117'u',97'a',114'r',121'y'},
                     {70'F',101'e',98'b',114'r',117'u',97'a',114'r',121'y'},
@@ -350,14 +235,14 @@ Public & Export & Global & Local Variables
     pretty_line = <no value>
 
  C:\Euphoria\include\std\serialize.e:
-    mem0 = 2951032
-    mem1 = 2951033
-    mem2 = 2951034
-    mem3 = 2951035
-    mem4 = 2951036
-    mem5 = 2951037
-    mem6 = 2951038
-    mem7 = 2951039
+    mem0 = 7540088
+    mem1 = 7540089
+    mem2 = 7540090
+    mem3 = 7540091
+    mem4 = 7540092
+    mem5 = 7540093
+    mem6 = 7540094
+    mem7 = 7540095
 
  C:\Euphoria\include\std\text.e:
     lower_case_SET = {}
@@ -367,10 +252,213 @@ Public & Export & Global & Local Variables
     api_CharLowerBuff = 37'%'
     api_CharUpperBuff = 38'&'
     tm_size = 1024
-    temp_mem = 45704416
+    temp_mem = 45744896
+
+ C:\Euphoria\include\std\io.e:
+    mem0 = 7539704
+    mem1 = 7539705
+    mem2 = 7539706
+    mem3 = 7539707
+
+ C:\Euphoria\include\std\scinot.e:
+    NATIVE_FORMAT = 2
+
+ C:\Euphoria\include\std\get.e:
+    input_file = <no value>
+    input_string = <no value>
+    string_next = <no value>
+    ch = <no value>
+    leading_whitespace = <no value>
 
  C:\Euphoria\include\std\eumem.e:
-    ram_space = {}
+    ram_space = {
+                  {
+                    10,
+                    {
+                      {-2,0,0},
+                      {
+                        155150785,
+                        7,
+                        {49'1',102'f'}
+                      },
+                      {
+                        358337410,
+                        4,
+                        {61'='}
+                      },
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {
+                        152324555,
+                        8,
+                        {59';'}
+                      },
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {
+                        668278351,
+                        6,
+                        {43'+'}
+                      },
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {
+                        708329237,
+                        0,
+                        {118'v',97'a',114'r'}
+                      },
+                      {
+                        88646550,
+                        1,
+                        {32' '}
+                      },
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {
+                        422304363,
+                        2,
+                        {110'n',117'u',109'm',101'e',114'r',111'o'}
+                      },
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {
+                        407539318,
+                        3,
+                        {32' '}
+                      },
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {
+                        286667130,
+                        9,
+                        {13,10}
+                      },
+                      {-2,0,0},
+                      {-2,0,0},
+                      {
+                        862228477,
+                        5,
+                        {49'1',48'0',102'f'}
+                      },
+                      {-2,0,0},
+                      {-2,0,0}
+                    },
+                    24
+                  },
+                  {
+                    2,
+                    {
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {
+                        263752859,
+                        {99'c',111'o',109'm',109'm',97'a',110'n',100'd',
+66'B',117'u',105'i',108'l',100'd',101'e',114'r',76'L',105'i',115's',116't'},
+                        4
+                      },
+                      {-2,0,0},
+                      {-2,0,0},
+                      {
+                        138986798,
+                        {98'b',108'l',111'o',99'c',107'k',76'L',105'i',115's',
+116't',80'P',97'a',114'r',115's',101'e',114'r'},
+                        7
+                      },
+                      {-2,0,0}
+                    },
+                    5
+                  },
+                  {
+                    0,
+                    {
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0}
+                    },
+                    5
+                  },
+                  {
+                    0,
+                    {
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0},
+                      {-2,0,0}
+                    },
+                    5
+                  }
+                }
     ram_free_list = 0
     free_rid = 6
 
@@ -383,9 +471,17 @@ Public & Export & Global & Local Variables
     true_bgcolor = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,
 21,22,23,24,25,26,27,28,29,30,31}
 
- C:\Users\luiz.silva\Documents\Euphoria\Zing\test_text.ex:
-    text = {77'M',65'A',195,135,195,131,32' ',195,137,32' ',66'B',79'O',77'M'}
-    striped_text = {77'M',65'A',67'C',65'A',32' ',69'E',32' ',66'B',79'O',
-77'M'}
+ C:\Users\luiz.silva\Documents\Euphoria\Zing\test_parse_block_list.ex:
+    source = {118'v',97'a',114'r',32' ',110'n',117'u',109'm',101'e',114'r',
+111'o',32' ',61'=',32' ',49'1',48'0',102'f',43'+',49'1',102'f',59';',13,
+10}
+    expectedResult = 1
+    e = 2
+    result = <no value>
+    diff = <no value>
+    i = <no value>
+    blo = <no value>
+    text = <no value>
+    expected = <no value>
 
 

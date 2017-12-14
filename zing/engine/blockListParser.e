@@ -3,18 +3,25 @@ namespace zingBlockListParser
 
 include script/block.e
 include script/engine.e
+include script/commandBuilder.e
 
+include util/constants.e
 include util/list.e
 include util/dictionary.e
+include util/util.e
 
 -- MÉTODOS
 public function parseBlockList(engine eng, sequence source)
 	sequence alphabet = "abcdefghijklmnopqrstuvxwyz0123456789"
 	dictionary commandNameDict = getCommandNameDictionary(eng)
+	list result = list:empty()
+	
+	for a=0 to length(source) do 
 	
 	
+	end for
 	
-	return list:from({block:new("em", 0, 0),block:new("desenvolvimento",0,0)})
+	return result
 end function
 
 --MONTA UM DICIONARIO COM O NOME DOS COMANDOS E O CAMINHO DO COMANDO
@@ -24,10 +31,16 @@ end function
 --    dict.put("===", true)
 public function getCommandNameDictionary(engine eng)
 	dictionary result = dictionary:empty()
-	list commandBuilderList = getCommandBuilderList(eng)
+	list commandBuilderList = engine:getCommandBuilderList(eng)
+	print_l(1, commandBuilderList)
 	
-	for i=0 to list:size(commandBuilderList) do
+	for i=0 to list:size(commandBuilderList)-1 do
 		commandBuilder cb = list:get(commandBuilderList, i)	
+		
+		--VERIFICA SE NÃO É UM COMMAND BUILDER
+		if not commandBuilder(cb) then
+			continue
+		end if
 		
 		--VERIFICA SE É UM COMANDO CUSTOMIZADO
 		if (commandBuilder:isCustom(cb)) then
@@ -44,14 +57,16 @@ public function getCommandNameDictionary(engine eng)
 				part &= letter
 				boolean value = false
 				--VERIFICA SE JÁ TEM PARTE DO COMANDO
-				if dictionary:containsKey(part) then
+				if dictionary:containsKey(result, part) then
 					--OBTEM O VALOR
-					value = dictionary:get(part)
+					value = dictionary:get(result, part)
 				end if
 				--ATUALIZA O VALOR
-				dictionary:put(part, value or i==length(name))
+				dictionary:put(result, part, value or i=length(name))
 			end for
 		end for
 		
 	end for
+	
+	return result
 end function

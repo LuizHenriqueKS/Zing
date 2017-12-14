@@ -29,6 +29,18 @@ public function empty()
 	return map:new()
 end function
 
+--CLONA UM DICIONÁRIO -- VERIFICAR SE Ñ TEM UMA MANEIRA NATIVA
+public function clone(dictionary dict)
+	dictionary result = dictionary:empty()
+	sequence keys = dictionary:keys(dict)
+	for i=0 to length(keys) do
+		object key = keys[i]
+		object value = dictionary:get(dict, key)
+		dictionary:put(result, key, value)
+	end for
+	return result
+end function
+
 
 --ADICONA UMA CHAVE E ATRIBUI DADOS A ELA.
 public procedure put(dictionary dict, object key, object value)

@@ -19,8 +19,9 @@ if list:size(result)!=list:size(expectedResult) then
 	printf(1, "Tamanhos diferentes: %d(esperado) != %d(obtido)\r\n", {list:size(expectedResult),list:size(result)})
 	puts(1, "Esperado: ")
 	print_l(1, expectedResult)
-	puts(1, "Obtido: ")
+	puts(1, "\r\nObtido: ")
 	print_l(1, block:listTexts(result))
+	puts(1, "\r\n")
 	any_key()
 	abort(0)
 end if
@@ -39,6 +40,6 @@ for i=0 to list:size(result) do
 	end if
 end for	
 puts(1, "===========================================\r\n")
-printf(1, "Quantidade de diferenças: ", diff)
+printf(1, "Quantidade de diferenças: %d\r\n", diff)
 
 any_key()

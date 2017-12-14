@@ -3,6 +3,7 @@
 namespace engine
 
 include util/list.e
+include util/constants.e
 include util/dictionary.e
 
 public type engine(object input)
@@ -13,6 +14,7 @@ end type
 
 public function new()
 	engine result = dictionary:empty()
+	engine:setCommandBuilderList(result, list:empty())
 	return result
 end function
 
@@ -35,8 +37,9 @@ public function parseBlockList(engine eng, sequence source)
 end function
 
 public function parseCommandList(engine eng, list blockList)
-	integer routineId = getCommandListParser(eng) 
-	list result = call_func(routineId, {eng, blockList})
+	-- integer routineId = get(eng) 
+	-- qlist result = call_func(routineId, {eng, blockList})
+	list result = list:empty()
 	return result
 end function
 
@@ -49,10 +52,15 @@ public procedure setBlockListParser(engine eng, integer routineId)
 end procedure
 
 public function getCommandBuilderList(engine eng)
-	return dictionary:get(eng, "commandBuilderList")
+	object result = dictionary:get(eng, "commandBuilderList")
+	if (list(result)) then
+		return result
+	else 
+		return list:empty()
+	end if
 end function
-public procedure setCommandBuilderList(engine eng, integer routineId)
-	dictionary:put(eng, "commandBuilderList", routineId)
+public procedure setCommandBuilderList(engine eng, list commandBuilderList)
+	dictionary:put(eng, "commandBuilderList", commandBuilderList)
 end procedure
 
 public function isCaseSensitive(engine eng)

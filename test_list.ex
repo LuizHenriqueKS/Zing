@@ -1,3 +1,5 @@
+include std/console.e
+
 include util/list.e
 include util/util.e
 
@@ -38,5 +40,6 @@ list listaSimples = list:from({1,2,4,5})
 list:insert(listaSimples, 2, 3)
 puts(1, "Lista simples: ")
 print_s(1, list:toSequence(listaSimples))
+puts(1, "\r\n")
 
-system("pause")
+any_key()

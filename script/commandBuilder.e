@@ -1,6 +1,7 @@
 -- DECLARAÇÕES
 namespace commandBuilder
 
+include util/constants.e
 include util/dictionary.e
 
 public type commandBuilder(object input)
@@ -17,6 +18,7 @@ public function new(sequence names, integer builder)
 end function
 
 public function custom(sequence names, integer validator, integer builder)
+	commandBuilder result = dictionary:empty()
 	setNames(result, names)
 	setCustom(result, true)
 	setValidator(result, validator)
@@ -36,15 +38,15 @@ end function
 public function getNames(commandBuilder cb)
 	return dictionary:get(cb, "names")
 end function
-public procedure setNames(commadBuilder cb, sequence names)
-	dictionary:set(cb, "names", names)
+public procedure setNames(commandBuilder cb, sequence names)
+	dictionary:put(cb, "names", names)
 end procedure
 
 public function getValidator(commandBuilder cb)
 	return dictionary:get(cb, "validator")
 end function
 public procedure setValidator(commandBuilder cb, integer routineId)
-	dictionary:set(cb, "validator", routineId)
+	dictionary:put(cb, "validator", routineId)
 end procedure
 
 public function isCustom(commandBuilder cb)
@@ -54,15 +56,15 @@ public function isCustom(commandBuilder cb)
 	else 
 		return false
 	end if
-end 
+end  function
 public procedure setCustom(commandBuilder cb, boolean custom)
-	dictionary:set(cb, "custom", custom)
+	dictionary:put(cb, "custom", custom)
 end procedure
 
 public function getBuilder(commandBuilder cb)
 	return dictionary:get(cb, "builder")
 end function
 public procedure setBuilder(commandBuilder cb, integer routineId)
-	dictionary:set(cb, "builder", routineId)
+	dictionary:put(cb, "builder", routineId)
 end procedure
 
