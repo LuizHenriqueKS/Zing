@@ -54,19 +54,6 @@ public procedure put(dictionary dict, object key, object value)
 end procedure
 
 
---CLONA UM DICIONÁRIO PARA OUTRO;
---INCLUI CHAVES E VALORES.
-public procedure clone(dictionary dict1, dictionary dict2)
-	if dictionary(dict1) and dictionary(dict2) then
-		map:copy(dict1, dict2)
-	else
-		trace(1)
-		--O DICIONÁRIO "DICT1" OU "DICT2" PODE NÃO SER
-		--DE FATO UM DICIONÁRIO.
-	end if
-end procedure
-
-
 --PEGA OS DADOS DE UMA CHAVE.
 --CASO NÃO TENHA NADA RETORNA UM NULL.
 public function get(dictionary dict, object key)
@@ -105,7 +92,7 @@ public procedure remove(dictionary dict, object key)
 		map:remove(dict, key)
 	else
 		trace(1)
-		--Não existe essa chave ou o dicionário
+		--Não existe essa chave
 	end if
 end procedure
 
@@ -118,17 +105,6 @@ public procedure removeByIndex(dictionary dict, integer index)
 		trace(1)
 		--O índice talvez tenha ou ultrapassou ou
 		--é menor que a quantidade de chaves do dicionário.
-	end if
-end procedure
-
-
---RESETA UM DICIONÁRIO POR COMPLETO.
-public procedure clear(dictionary dict)
-	if dictionary(dict) then
-		map:clear(dict)
-	else
-		trace(1)
-		--Não existe essa chave ou o dicionário
 	end if
 end procedure
 
