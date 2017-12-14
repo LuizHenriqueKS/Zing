@@ -1,6 +1,6 @@
-C:\Users\Luiz Henrique\Documents\Euphoria\Zing\test_dictionary.ex:1
+C:\Users\Luiz Henrique\Documents\Euphoria\Zing\util\list.e:1
 <0117>:: Not expecting to see ''-'' here
--with trace
+-namespace list
 ^
 
 
