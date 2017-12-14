@@ -8,16 +8,16 @@ public type commandBuilder(object input)
 end type
 
 -- CONSTRUTORES
-public function new(sequence name, integer builder)
+public function new(sequence names, integer builder)
 	commandBuilder result = dictionary:empty()
-	setName(result, name)
+	setNames(result, names)
 	setCustom(result, false)
 	setBuilder(result, builder)
 	return result
 end function
 
-public function custom(sequence name, integer validator, integer builder)
-	setName(result, name)
+public function custom(sequence names, integer validator, integer builder)
+	setNames(result, names)
 	setCustom(result, true)
 	setValidator(result, validator)
 	setBuilder(result, builder)
@@ -33,11 +33,11 @@ end function
 
 
 -- GETTERS E SETTERS
-public function getName(commandBuilder cb)
-	return dictionary:get(cb, "name")
+public function getNames(commandBuilder cb)
+	return dictionary:get(cb, "names")
 end function
-public procedure setName(commadBuilder cb, sequence name)
-	dictionary:set(cb, "name", name)
+public procedure setNames(commadBuilder cb, sequence names)
+	dictionary:set(cb, "names", names)
 end procedure
 
 public function getValidator(commandBuilder cb)

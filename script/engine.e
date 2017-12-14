@@ -48,9 +48,21 @@ public procedure setBlockListParser(engine eng, integer routineId)
 	dictionary:put(eng, "blockListParser", routineId)
 end procedure
 
-public function getCommandListParser(engine eng)
-	return dictionary:get(eng, "commandListParser")
+public function getCommandBuilderList(engine eng)
+	return dictionary:get(eng, "commandBuilderList")
 end function
-public procedure setCommandListParser(engine eng, integer routineId)
-	dictionary:put(eng, "commandListParser", routineId)
+public procedure setCommandBuilderList(engine eng, integer routineId)
+	dictionary:put(eng, "commandBuilderList", routineId)
+end procedure
+
+public function isCaseSensitive(engine eng)
+	object value = dictionary:get(eng, "caseSensitive")
+	if boolean(value) then
+		return value
+	else 
+		return false
+	end if
+end function
+public procedure setCaseSensitive(engine eng, boolean caseSensitive)
+	dictionary:put(eng, "caseSensitive", caseSensitive)
 end procedure
