@@ -1,7 +1,12 @@
-C:\Users\Luiz Henrique\Documents\Euphoria\Zing\test_dictionary.ex:1
-<0117>:: Not expecting to see ''-'' here
--with trace
-^
+C:\Users\Luiz Henrique\Documents\Euphoria\Zing\test_parse_block_list.ex:3
+<0052>:: can't find 'util\list.e' in any of ...
+	C:\Users\Luiz Henrique\Documents\Euphoria\Zing
+	C:\Users\Luiz Henrique\Documents\Euphoria\Zing\test_parse_block_list.ex
+	C:\Euphoria\include
+	C:\Euphoria
+
+include util/list.e
+                   ^
 
 
 --- Defined Words ---
