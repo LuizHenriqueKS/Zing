@@ -1,9 +1,11 @@
-C:\Users\luiz.silva\Documents\Euphoria\Zing\zing\engine\blockListParser.e:35
-<0074>:: Errors resolving the following references:
-	'getLetterInfo' (zing\engine\blockListParser.e:35) has not been declared.
+C:\Users\André Luiz\Documents\GitHub\Zing\test_parse_block_list.ex:3
+<0052>:: can't find 'util\list.e' in any of ...
+	C:\Users\André Luiz\Documents\GitHub\Zing
+	C:\Users\André Luiz\Documents\GitHub\Zing\test_parse_block_list.ex
+	C:\Euphoria
 
-		sequence letterInfo = getLetterInfo(source, a, len)
-		                                   ^
+include util/list.e
+                   ^
 
 
 --- Defined Words ---
