@@ -92,3 +92,7 @@ end function
 public function isEmpty(sequence str)
 	return equal(str, null) or equal(str, "")
 end function
+
+public function isWindows()
+	return true
+end function

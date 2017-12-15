@@ -34,7 +34,7 @@ public function parseBlockList(engine eng, sequence source)
 	
 		sequence letterInfo = getLetterInfo(source, a, len)
 		skip = letterInfo[1]-1
-		atom letter = letterInfo[2]
+		atom letter = letterInfo[3]
 		
 		boolean isSymbol = find(lower(letter), alphabet)=0
 		printf(1, "%s -> %d\r\n", {letter,find(letter, alphabet)})
@@ -43,11 +43,11 @@ public function parseBlockList(engine eng, sequence source)
 			if not util:isEmpty(buffer) then
 				list:add(result, block:new(buffer,startColumn, startRow))
 			end if 
-			buffer = {letter}
+			buffer = letterInfo[2]
 			startColumn = column
 			startRow = row
 		else 
-			buffer &= letter
+			buffer &= letterInfo[2]
 		end if
 		wasSymbol = isSymbol
 		
@@ -61,7 +61,16 @@ public function parseBlockList(engine eng, sequence source)
 end function
 
 function getLetterInfo(sequence source, integer index, integer len)
-	return {1, source[index]}
+	if index+1>len then
+		return {1, {source[index]}, source[index]}
+	end if
+	sequence w_char = {source[index], source[index+1]}
+	sequence result = removeAccents(w_char)
+	if equal(w_char, result) then
+		return {1, {source[index]}, source[index]}
+	else 
+		return {2, w_char, result[1]}
+	end if
 end function
 
 --MONTA UM DICIONARIO COM O NOME DOS COMANDOS E O CAMINHO DO COMANDO

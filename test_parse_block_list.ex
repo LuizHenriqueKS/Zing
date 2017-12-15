@@ -10,7 +10,7 @@ include script/engine.e
 include zing/engine/zing.e
 
 sequence source = "var número = 10F+1f;\r\n"
-list expectedResult = list:from({"var"," ", "número", " ", "=", "10F", "+", "1f", ";" , "\r\n"})
+list expectedResult = list:from({"var"," ", "número", " ", "=", " ", "10F", "+", "1f", ";" , "\r","\n"})
 
 zing e = zing:new()
 list result = engine:parseBlockList(e, source)
@@ -29,7 +29,7 @@ end if
 integer diff = 0
 puts(1, "Comparando: \r\n")
 puts(1, "===========================================\r\n")
-for i=0 to list:size(result) do
+for i=0 to list:size(result)-1 do
 	block blo = list:get(result, i)
 	sequence text = block:getText(blo)
 	sequence expected = list:get(expectedResult, i)
