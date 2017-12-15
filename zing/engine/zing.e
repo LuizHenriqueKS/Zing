@@ -5,6 +5,8 @@ include script/engine.e
 
 include zing/engine/blockListParser.e
 
+include zing/engine/commandBuilder/breakLineCommandBuilder.e
+
 include util/list.e
 
 -- MÉTODOS
@@ -16,6 +18,12 @@ public function new()
 	zing result = engine:new()
 	integer blockListParserId = routine_id("zingBlockListParser:parseBlockList")
 	engine:setBlockListParser(result, blockListParserId)
-	engine:setCommandBuilderList(result, list:empty())
+	
+	-- LISTA DE CONSTRUTORES COMANDOS
+	list cbl = list:empty()
+	list:add(cbl,breakLineCommandBuilder:new())
+	
+	engine:setCommandBuilderList(result, cbl)
+	
 	return result
 end function

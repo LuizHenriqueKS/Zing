@@ -37,7 +37,7 @@ public function parseBlockList(engine eng, sequence source)
 		atom letter = letterInfo[3]
 		
 		boolean isSymbol = find(lower(letter), alphabet)=0
-		printf(1, "%s -> %d\r\n", {letter,find(letter, alphabet)})
+		--printf(1, "%s -> %d\r\n", {letter,find(letter, alphabet)})
 		
 		if (isSymbol xor wasSymbol) or (isSymbol) then
 			if not util:isEmpty(buffer) then
@@ -101,8 +101,8 @@ function getCommandNameDictionary(engine eng)
 			sequence name = names[j]
 			sequence part = ""
 			for l=1 to length(name) do
-				sequence letter = name[l]
-				part &= letter
+				atom letter = name[l]
+				part &= {letter}
 				boolean value = false
 				--VERIFICA SE JÁ TEM PARTE DO COMANDO
 				if dictionary:containsKey(result, part) then
@@ -110,7 +110,7 @@ function getCommandNameDictionary(engine eng)
 					value = dictionary:get(result, part)
 				end if
 				--ATUALIZA O VALOR
-				dictionary:put(result, part, value or i=length(name))
+				dictionary:put(result, part, value or l=length(name))
 			end for
 		end for
 		
