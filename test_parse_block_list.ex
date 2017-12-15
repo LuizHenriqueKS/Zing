@@ -13,7 +13,8 @@ sequence source = "var número = 10F+1f;\r\n"
 list expectedResult = list:from({"var"," ", "número", " ", "=", " ", "10F", "+", "1f", ";" , "\r\n"})
 
 zing e = zing:new()
-list result = engine:parseBlockList(e, source)
+object result = engine:parseBlockList(e, source)
+result = blockList:getList(result)
 
 if list:size(result)!=list:size(expectedResult) then
 	printf(1, "Tamanhos diferentes: %d(esperado) != %d(obtido)\r\n", {list:size(expectedResult),list:size(result)})

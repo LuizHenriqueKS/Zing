@@ -6,6 +6,9 @@ include util/list.e
 include util/constants.e
 include util/dictionary.e
 
+include script/block.e
+include script/blockList.e
+
 public type engine(object input)
 	return dictionary(input)
 end type
@@ -15,6 +18,7 @@ end type
 public function new()
 	engine result = dictionary:empty()
 	engine:setCommandBuilderList(result, list:empty())
+	dictionary:put(result, "params", dictionary:empty())
 	return result
 end function
 
@@ -36,7 +40,7 @@ public function parseBlockList(engine eng, sequence source)
 	return result
 end function
 
-public function parseCommandList(engine eng, list blockList)
+public function parseCommandList(engine eng, blockList bl, sequence commandNames = null, sequence expectedPatterns = null)
 	-- integer routineId = get(eng) 
 	-- qlist result = call_func(routineId, {eng, blockList})
 	list result = list:empty()
@@ -73,4 +77,13 @@ public function isCaseSensitive(engine eng)
 end function
 public procedure setCaseSensitive(engine eng, boolean caseSensitive)
 	dictionary:put(eng, "caseSensitive", caseSensitive)
+end procedure
+
+public function getParam(engine eng, sequence name)
+	dictionary params = dictionary:get(eng, "params")
+	return dictionary:get(params, name)
+end function
+public procedure setParam(engine eng, sequence name, object value)
+	dictionary params = dictionary:get(eng, "params")
+	dictionary:put(params, name, value)
 end procedure

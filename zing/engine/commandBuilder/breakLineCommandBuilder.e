@@ -9,7 +9,7 @@ include script/commandBuilder.e
 
 -- CONSTRUTORES
 public function new()
-	return commandBuilder:new({"\r\n",";"}, routine_id("build"))
+	return commandBuilder:new({"\r\n"}, routine_id("build"))
 end function
 
 public function build(engine eng, block blo)

@@ -4,18 +4,19 @@ namespace zingBlockListParser
 include std/text.e
 include script/block.e
 include script/engine.e
+include script/blockList.e
 include script/commandBuilder.e
 
-include util/constants.e
-include util/list.e
-include util/dictionary.e
 include util/util.e
+include util/list.e
+include util/constants.e
+include util/dictionary.e
 
 -- MÉTODOS
 public function parseBlockList(engine eng, sequence source)
 	sequence alphabet = "abcdefghijklmnopqrstuvxwyz0123456789"
 	dictionary commandNameDict = getCommandNameDictionary(eng)
-	list result = list:empty()
+	blockList result = blockList:new(eng)
 	sequence buffer = ""
 	boolean wasSymbol = false
 	integer len = length(source)
@@ -55,7 +56,7 @@ public function parseBlockList(engine eng, sequence source)
 					continue
 				end if
 				
-				list:add(result, block:new(buffer,startColumn, startRow))
+				blockList:add(result, block:new(buffer,startColumn, startRow))
 			end if 
 			
 			buffer = letterInfo[2]
@@ -69,7 +70,7 @@ public function parseBlockList(engine eng, sequence source)
 	end for
 	
 	if not util:isEmpty(buffer) then
-		list:add(result, block:new(buffer,0,0))
+		blockList:add(result, block:new(buffer,0,0))
 	end if 
 	
 	return result

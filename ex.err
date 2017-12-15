@@ -1,9 +1,7 @@
-C:\Users\luiz.silva\Documents\Euphoria\Zing\zing\engine\blockListParser.e:43
-<0074>:: Errors resolving the following references:
-	'equals' (zing\engine\blockListParser.e:43) has not been declared.
-
-		if equals(letter, '\n') then
-		         ^
+C:\Users\luiz.silva\Documents\Euphoria\Zing\test_parse_block_list.ex:17
+<0117>:: Not expecting to see '':'' here
+result = blockList:getList(result)
+                  ^
 
 
 --- Defined Words ---
