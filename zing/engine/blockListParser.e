@@ -37,12 +37,27 @@ public function parseBlockList(engine eng, sequence source)
 		atom letter = letterInfo[3]
 		
 		boolean isSymbol = find(lower(letter), alphabet)=0
-		--printf(1, "%s -> %d\r\n", {letter,find(letter, alphabet)})
+		--printf(1, "%s -> %d\r\n", {letter,find(letter, alphabet)})		
+		
+		-- NOVA LINHA
+		if equal(letter, '\n') then
+			row += 1
+			column = 0
+		end if
 		
 		if (isSymbol xor wasSymbol) or (isSymbol) then
 			if not util:isEmpty(buffer) then
+				
+				-- É O PADRÃO DE UM COMANDO
+				if dictionary:containsKey(commandNameDict, buffer & letterInfo[2]) then
+					buffer &= letterInfo[2]
+					wasSymbol = isSymbol
+					continue
+				end if
+				
 				list:add(result, block:new(buffer,startColumn, startRow))
 			end if 
+			
 			buffer = letterInfo[2]
 			startColumn = column
 			startRow = row

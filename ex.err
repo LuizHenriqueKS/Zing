@@ -1,7 +1,9 @@
-C:\Users\luiz.silva\Documents\Euphoria\Zing\script\command.e:28
-<0120>:: no value returned from function
-end function
-           ^
+C:\Users\luiz.silva\Documents\Euphoria\Zing\zing\engine\blockListParser.e:43
+<0074>:: Errors resolving the following references:
+	'equals' (zing\engine\blockListParser.e:43) has not been declared.
+
+		if equals(letter, '\n') then
+		         ^
 
 
 --- Defined Words ---
