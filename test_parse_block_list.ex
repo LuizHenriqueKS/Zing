@@ -5,6 +5,7 @@ include util/constants.e
 include util/util.e
 
 include script/block.e
+include script/blockList.e
 include script/engine.e
 
 include zing/engine/zing.e
