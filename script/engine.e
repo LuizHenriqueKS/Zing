@@ -1,6 +1,7 @@
 -- DECLARAÇÕES
-
 namespace engine
+
+include std/text.e
 
 include util/list.e
 include util/constants.e
@@ -8,13 +9,13 @@ include util/dictionary.e
 
 include script/block.e
 include script/blockList.e
+include script/commandBuilder.e
 
 public type engine(object input)
 	return dictionary(input)
 end type
 
 -- MÉTODOS PÚBLICOS
-
 public function new()
 	engine result = dictionary:empty()
 	engine:setCommandBuilderList(result, list:empty())
@@ -41,9 +42,33 @@ public function parseBlockList(engine eng, sequence source)
 end function
 
 public function parseCommandList(engine eng, blockList bl, sequence commandNames = null, sequence expectedPatterns = null)
-	-- integer routineId = get(eng) 
-	-- qlist result = call_func(routineId, {eng, blockList})
 	list result = list:empty()
+	boolean isSenCas = isCaseSensitive(eng)
+	list commandBuilderList = getCommandBuilderList(eng)
+	
+	while blockList:next(bl) do 
+		block blo = blockList:get(bl)
+		sequence text = block:getText(blo)
+		
+		for i=0 to list:size(commandBuilderList) do
+			commandBuilder cb = list:get(commandBuilderList, i)
+			sequence patterns = commandBuilder:getPatterns(cb)
+			for j=1 to length(patterns) do
+				boolean build
+				sequence pattern = patterns[j]
+				if isSenCas then
+					build = equal(text, pattern)
+				else 
+					build = equal(lower(text), lower(pattern))
+				end if
+				if  build then
+					printf(1, "Construir comando: %s\r\n", pattern)
+				end if
+			end for
+			
+		end for 
+	end while
+	
 	return result
 end function
 

@@ -112,7 +112,7 @@ function getCommandNameDictionary(engine eng)
 		end if
 		
 		--OBTEM OS NOMES DO COMANDO
-		sequence names = commandBuilder:getNames(cb)
+		sequence names = commandBuilder:getPatterns(cb)
 		for j=1 to length(names) do
 			sequence name = names[j]
 			sequence part = ""

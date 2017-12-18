@@ -11,11 +11,12 @@ public type command(object input)
 end type
 
 -- CONSTRUTORES
-public function new(engine eng, block blo, sequence name)
+public function new(engine eng, block blo, sequence name, integer execute = -1)
 	command result = dictionary:empty()
 	setEngine(result, eng)
 	setBlock(result, blo)
 	setName(result, name)
+	setExecute(result, execute)
 	return result
 end function
 
@@ -39,4 +40,11 @@ public function getBlock(command c)
 end function
 public procedure setBlock(command c, block blo)
 	dictionary:put(c, "block", blo)
+end procedure
+
+public function getExecute(command c)
+	return dictionary:get(c, "execute")
+end function
+public procedure setExecute(command c, integer routineId)
+	dictionary:put(c, "execute", routineId)
 end procedure
